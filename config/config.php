@@ -1,6 +1,10 @@
 <?php
 
-define('BASE_URL',    'http://localhost/simdaf-kri2026');
+$is_local = in_array($_SERVER['HTTP_HOST'] ?? '', ['localhost', '127.0.0.1']);
+define('BASE_URL', $is_local
+    ? 'http://localhost/simdaf-kri2026'
+    : 'https://simdaf-kri2026.site'
+);
 define('APP_NAME',    'SIMDAF KRI 2026');
 define('APP_VERSION', '1.0.0');
 
